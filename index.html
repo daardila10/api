@@ -11,26 +11,6 @@
     <button id="fetchNews">Fetch News</button>
     <div id="newsList"></div>
 
-    <script>
-      document.getElementById("fetchNews").addEventListener("click", () => {
-        fetch("/news")
-          .then((response) => response.json())
-          .then((articles) => {
-            const newsList = document.getElementById("newsList");
-            newsList.innerHTML = ""; // Clear previous content
-
-            articles.forEach((article) => {
-              const articleDiv = document.createElement("div");
-              articleDiv.innerHTML = `
-              <h2>${article.title}</h2>
-              <p>Source: ${article.source}</p>
-              <a href="${article.url}" target="_blank">Read More</a>
-            `;
-              newsList.appendChild(articleDiv);
-            });
-          })
-          .catch((error) => console.error(error));
-      });
-    </script>
+    <script src="index.js"></script>
   </body>
 </html>
